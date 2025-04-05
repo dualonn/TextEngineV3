@@ -1,0 +1,54 @@
+body, html{
+    height: 100%;
+    width: 100%;
+    margin: 0;
+}
+
+body{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+h1{
+    position: absolute;
+}
+
+#dialogue_window{
+    display: flex;
+    position: relative;
+    width: 68%;
+    height: 13%;
+    background: rgb(200, 200, 200);
+    border: 2px solid black;
+    top: 25%;
+    padding: 1.5%;
+}
+#dialogue{
+    position: relative;
+    width: 85%;
+    height: 100%;
+    font-family: Calibri, sans-serif;
+    font-size: 140%;
+    left: 15%;
+}
+
+#character_icon{
+    border-inline: 2px solid black;
+    width: 11%;
+    height: 74%;
+    position: absolute;
+    left: 2%;
+    background-color: white;
+    image-rendering: pixelated;
+}
+
+@keyframes close_box {
+    from {height: 13%; padding: 1.5%; border: 2px solid black}
+    to {height: 0; padding: 0; border: 0; #character_icon{border: 0}}
+}
+@keyframes open_box {
+    from {height: 0; padding: 0; border: 0; #character_icon{border: 0}}
+    to {height: 13%; padding: 1.5%; border: 2px solid black}
+}
