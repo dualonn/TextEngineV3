@@ -37,7 +37,7 @@ function waitForKeyPress(keyboard_key) {
     });
 }
 
-async function print_dialogue(speed, image, text, startDialogue, endDialogue){
+async function print_dialogue(speed, image, text, startDialogue=false, endDialogue=false){
     if(startDialogue){toggleDialogueWindow(true)}
     if(image){character_icon.setAttribute("src", `${image}.png`)}
     else{character_icon.setAttribute("src", `default.png`)}
@@ -93,8 +93,9 @@ async function print_dialogue(speed, image, text, startDialogue, endDialogue){
 }
 
 (async () => {
-    await print_dialogue(0, "Character001","Lorem ipsum dolor sit amet, /s500 consectetur adipiscing elit. /s800 Integer cursus, ex ut aliquam hendrerit, nisl ipsum venenatis erat, at consequat mi tellus rhoncus metus. Cras in aliquet nibh. Proin vitae pellentesque ante. Vivamus suscipit nibh ut metus euismod vestibulum. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec faucibus, mauris finibus faucibus venenatis, velit mi bibendum quam, vitae euismod eros lorem congue felis. In et felis ac diam vulputate facilisis id nec justo.", true, false)
-    await print_dialogue(75, "", "H-hello u-user... /s500 Wh-why don't we h-have a little f-f-fun?", false, true)
+    await print_dialogue(0, "Character001","Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer cursus, ex ut aliquam hendrerit, nisl ipsum venenatis erat, at consequat mi tellus rhoncus metus. Cras in aliquet nibh. Proin vitae pellentesque ante. Vivamus suscipit nibh ut metus euismod vestibulum. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec faucibus, mauris finibus faucibus venenatis, velit mi bibendum quam, vitae euismod eros lorem congue felis. In et felis ac diam vulputate facilisis id nec justo.", true, false)
+    await print_dialogue(75, "", "H-hello u-user... /s500 Wh-why don't we h-have a little f-f-fun?")
+    await print_dialogue(25, "Programmer", "Hey, what's up? /s1000 I'm the developer, Dualonn. /s1000 This is the third version of my javascript text engine project. /s1000 Hope you have fun!", false, true)
 })()
 
 /* Test toggleDialogueWindow function
